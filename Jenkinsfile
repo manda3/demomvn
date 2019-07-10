@@ -43,7 +43,7 @@
       
            post {
 	        always {
-		    echo 'always run'
+		   mail to : meenakshi.m8@gmail.com, subject: 'The Pipeline failed :(' 
 		      }
 		 failure {
 		    echo ' failed'
