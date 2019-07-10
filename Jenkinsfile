@@ -40,13 +40,13 @@
                           
                           
                    }       
-       //stage('deploy artifacts')
-                       {steps {
+       //stage('deploy artifacts')//
+                       //{steps {
 
-		             echo 'this is to deploy artifacts'
-			     sh 'mvn deploy'
+//		             echo 'this is to deploy artifacts'//
+//			     sh 'mvn deploy'//
                         
-		        }}//
+		       // }}//
                   
                    
      }       
