@@ -1,6 +1,14 @@
  pipeline {
           agent any 
 	  stages    {
+
+	  stage('clean')
+	            {
+		     steps {
+		           echo 'this is maven clean'
+			   sh 'mvn clean'
+			   }
+	            }
 	  stage('build')
 	            {
 		    steps {
@@ -32,17 +40,13 @@
                           
                           
                    }       
-//	  stage('deploy artifacts')
+       //stage('deploy artifacts')
                        {steps {
 
 		             echo 'this is to deploy artifacts'
 			     sh 'mvn deploy'
                         
 		        }}//
-	 post { 
-        always { 
-                 sh 'mvn clean'
-               }    
-              }
-     
+                  
+                   
      }       
