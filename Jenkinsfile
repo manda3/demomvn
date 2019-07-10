@@ -32,11 +32,17 @@
                           
                           
                           
-	  stage('deploy artifacts')
+//	  stage('deploy artifacts')
                        {steps {
 
 		             echo 'this is to deploy artifacts'
 			     sh 'mvn deploy'
-
-		        }}
-              }}       
+                        
+		        }}//
+	 post { 
+        always { 
+                 sh 'mvn clean'
+               }    
+              }
+     
+     }}       
