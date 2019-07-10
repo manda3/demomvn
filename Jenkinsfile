@@ -39,7 +39,16 @@
                          } }
                           
                           
-                   }       
+                   }
+      
+           post {
+	        always {
+		    echo 'always run'
+		      }
+		 failure {
+		    echo ' failed'
+		     }
+		}     
        //stage('deploy artifacts')//
                        //{steps {
 
