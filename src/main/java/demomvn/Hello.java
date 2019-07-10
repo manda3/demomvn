@@ -1,4 +1,4 @@
-﻿package demomvn;
+﻿package com.example.javamavenjunithelloworld;
 
 import java.io.PrintStream;
 
