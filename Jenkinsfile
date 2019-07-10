@@ -31,7 +31,7 @@
                          } }
                           
                           
-                          
+                   }       
 //	  stage('deploy artifacts')
                        {steps {
 
@@ -45,4 +45,4 @@
                }    
               }
      
-     }}       
+     }       
