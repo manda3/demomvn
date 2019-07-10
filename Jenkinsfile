@@ -43,7 +43,7 @@
       
            post {
 	        always {
-		   mail to: meenakshi.m8@gmail.com, subject: 'The Pipeline failed' 
+		   junit '**/target/*.xml' 
 		      }
 		 failure {
 		    echo ' failed'
