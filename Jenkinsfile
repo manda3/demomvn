@@ -7,6 +7,7 @@
 		     steps {
 		           echo 'this is maven clean'
 			   sh 'mvn clean'
+			   echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 			   }
 	            }
 	  stage('build')
@@ -14,6 +15,7 @@
 		    steps {
 		            echo 'this is maven build'
 			    sh 'mvn compile'
+			    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 
 			  }
 	             }
