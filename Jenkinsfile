@@ -52,7 +52,7 @@
                          } }
                           
                           
-                   }
+                   
           stage('parallel test')
 	         {
 		 parallel {
@@ -65,7 +65,7 @@
 			                        steps {
 						       echo "second parallel code"
 						       }
-	          }}}
+	          }}}}
       
            post {
 	        always {
