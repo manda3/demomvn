@@ -6,8 +6,8 @@
 	            {
 		     steps {
 		           echo 'this is maven clean'
-			   sh 'mvn clean'
-			   echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+			   sh 'mvn clean'                                      
+			   
 			   }
 	            }
 	  stage('build')
@@ -19,9 +19,20 @@
 
 			  }
 	             }
+	 stage('test')
+	           {
+		     steps {
+		          input ('do u want to proceed?')
+			  }
+	           }
          stage('package')
 	            {
-		     steps {
+		      when {
+		             
+			             branch "master"
+			   }
+
+	              steps {
 		            echo 'this is maven package'
 			    sh 'mvn package'
 			    }
@@ -42,6 +53,19 @@
                           
                           
                    }
+          stage('parallel test')
+	         {
+		 parallel {
+		           stage('unit test'){
+			                       steps{
+					             echo "first parallel code"
+						     }
+					       }
+                          stage('integration test') {
+			                        steps {
+						       echo "second parallel code"
+						       }
+	          }}}
       
            post {
 	        always {
